@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: loxus46mi-java-springboot-gitops
+  description: This is GitOps manifest for loxus46mi-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: loxus46mi-java-springboot
+    janus-idp.io/tekton: loxus46mi-java-springboot 
+    backstage.io/kubernetes-id: loxus46mi-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:loxus46mi-java-springboot
